@@ -1,0 +1,15 @@
+.Profil {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-around;
+}
+
+.profil-avatar-img {
+    width: 200px;
+    height: 200px;
+}
+
+.profil-infos ul li {
+    list-style: none;
+}

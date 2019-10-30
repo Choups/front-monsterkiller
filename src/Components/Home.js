@@ -32,8 +32,6 @@ class Home extends Component {
                             />
                         </label>
                     </form>
-                </div>
-                <div>
                     <button>Let's fight !</button>
                 </div>
             </div>
