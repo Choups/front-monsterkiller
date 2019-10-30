@@ -6,7 +6,6 @@ import Combat from "./Components/Combat";
 import Home from "./Components/Home";
 import Main from "./Components/Main";
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -14,17 +13,15 @@ class App extends Component {
   }
   render() {
     return (
-    <div>
-      <Header />
-      <Home />
-      <Main />
-      <Combat />
-      <Profil />
-    </div>
-
+      <div className="App">
+        <Header />
+        <Home />
+        <Main />
+        <Combat />
+        <Profil />
+      </div>
     );
   }
-  
 }
 
 export default App;
