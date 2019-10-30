@@ -5,7 +5,16 @@ class Combat extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.click = this.click.bind(this);
+    this.rollTheDice = this.rollTheDice.bind(this);
   }
+  rollTheDice() {
+    this.props.parentMethod2();
+  }
+  click() {
+    this.props.parentMethod();
+  }
+
   render() {
     return (
       <div className="combat">
@@ -18,9 +27,9 @@ class Combat extends Component {
         <p>2500 points</p>
 
         <div className="combat-groupBtn">
-          <button>NEXT</button>
+          <button onClick={this.click}>NEXT</button>
           <p>SCORE</p>
-          <button>FIGHT !</button>
+          <button onClick={this.rollTheDice}>FIGHT !</button>
         </div>
 
         <p>IKILLU</p>

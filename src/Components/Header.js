@@ -4,24 +4,23 @@ import "./Header.css";
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showProfileOnly: false
-    };
+    this.state = {};
 
     this.clickToMain = this.clickToMain.bind(this);
+    this.clickToProfil = this.clickToProfil.bind(this);
   }
   clickToMain() {
     this.props.parentMethod();
   }
 
-  handleProfilOnlyClick = () => {
-    this.setState({ showProfileOnly: !this.state.showProfileOnly });
-  };
+  clickToProfil() {
+    this.props.parentMethod2();
+  }
 
   render() {
     return (
       <nav className="NavBlock">
-        <button className="ButtonsNav" onClick={this.handleProfileOnlyClick}>
+        <button className="ButtonsNav" onClick={this.clickToProfil}>
           USER
         </button>
 

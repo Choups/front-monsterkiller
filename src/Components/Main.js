@@ -5,7 +5,12 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.next = this.next.bind(this);
     this.fight = this.fight.bind(this);
+  }
+
+  next() {
+    this.props.parentMethod2();
   }
 
   fight() {
@@ -14,13 +19,13 @@ class Main extends Component {
   render() {
     return (
       <div className="cards-flexbox">
-        <div class="cards">
+        <div className="cards">
           <img
             src="https://www.podcastscience.fm/wp-content/uploads/2011/12/Untitled.png"
             alt="Avatar"
           />
 
-          <div class="cards-container">
+          <div className="cards-container">
             <h4>
               <b>John Doe</b>
             </h4>
@@ -28,7 +33,9 @@ class Main extends Component {
           </div>
         </div>
         <div>
-          <button className="cards-container-buttons">X</button>
+          <button onClick={this.next} className="cards-container-buttons">
+            X
+          </button>
           <button onClick={this.fight} className="cards-container-buttons">
             GO!
           </button>
