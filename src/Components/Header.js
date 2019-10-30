@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Header.css";
+import Axios from "axios";
 
 class Header extends Component {
   constructor(props) {
@@ -17,8 +18,17 @@ class Header extends Component {
   componentDidUpdate(prevProps) {
     // Utilisation classique (pensez bien à comparer les props) :
     if (this.props.propsId !== prevProps.propsId) {
-      console.log("ok");
-      this.setState({ IdHunter: this.props.propsId });
+      //   this.setState({ IdHunter: this.props.propsId });
+      //   this.getScore();
+      Axios.get(`http://192.168.1.37:8000/hunter/show/${this.props.propsId}`)
+        .then(response => response.data)
+        .then(data => {
+          console.log(data);
+          this.setState({
+            score: data.hunter.score,
+            IdHunter: this.props.propsId
+          });
+        });
     }
   }
 
