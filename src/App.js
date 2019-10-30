@@ -16,6 +16,15 @@ class App extends Component {
       combat: "hiddenComponent",
       profil: "hiddenComponent"
     };
+    this.goToMain = this.goToMain.bind(this);
+  }
+
+  goToMain() {
+    this.setState({
+      home: "hiddenComponent",
+      header: "show-100",
+      main: "show-90"
+    });
   }
 
   render() {
@@ -25,7 +34,7 @@ class App extends Component {
           <Header />
         </div>
         <div className={this.state.home}>
-          <Home />
+          <Home parentMethod={this.goToMain} />
         </div>
         <div className={this.state.main}>
           <Main />
