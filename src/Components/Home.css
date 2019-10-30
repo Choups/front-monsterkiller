@@ -2,7 +2,11 @@
 .Home form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+.Home {
+    height: 100vh;
 }
 
 .Home input,
