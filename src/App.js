@@ -9,24 +9,31 @@ import Main from "./Components/Main";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      header: "hiddenComponent",
+      home: "show-100",
+      main: "hiddenComponent",
+      combat: "hiddenComponent",
+      profil: "hiddenComponent"
+    };
   }
+
   render() {
     return (
       <div className="App">
-        <div className="hiddenComponent">
+        <div className={this.state.header}>
           <Header />
         </div>
-        <div className="show-100">
+        <div className={this.state.home}>
           <Home />
         </div>
-        <div className="hiddenComponent">
+        <div className={this.state.main}>
           <Main />
         </div>
-        <div className="hiddenComponent">
+        <div className={this.state.combat}>
           <Combat />
         </div>
-        <div className="hiddenComponent">
+        <div className={this.state.profil}>
           <Profil />
         </div>
       </div>
