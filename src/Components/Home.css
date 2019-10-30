@@ -1,0 +1,12 @@
+.Home,
+.Home form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Home input,
+.Home button {
+    text-align: center;
+    width: 30%;
+}
