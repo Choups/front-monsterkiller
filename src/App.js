@@ -5,6 +5,7 @@ import Profil from "./Components/Profil";
 import Combat from "./Components/Combat";
 import Home from "./Components/Home";
 import Main from "./Components/Main";
+import Axios from "axios";
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +15,10 @@ class App extends Component {
       home: "show-100",
       main: "hiddenComponent",
       combat: "hiddenComponent",
-      profil: "hiddenComponent"
+      profil: "hiddenComponent",
+      arrMonsters: [],
+      arrHunters: [],
+      arrFights: []
     };
     this.goToMain = this.goToMain.bind(this);
     this.goToCombat = this.goToCombat.bind(this);
@@ -23,6 +27,61 @@ class App extends Component {
     this.otherMonster = this.otherMonster.bind(this);
     this.randomResult = this.randomResult.bind(this);
     this.goToHome = this.goToHome.bind(this);
+    this.getAPImonster = this.getAPImonster.bind(this);
+    this.getAPIfight = this.getAPIfight.bind(this);
+    this.postAPIfight = this.postAPIfight.bind(this);
+  }
+
+  componentDidMount() {
+    this.getAPImonster();
+    this.getAPIhunters();
+    this.getAPIfight();
+  }
+
+  postAPIfight() {
+    Axios.post(`http://192.168.1.37:8000/fight/add`, {
+      monster_id: 1,
+      hunter_id: 1,
+      monster_points: 100,
+      hunter_points: 200
+    })
+
+      .then(response => response.data)
+      .then(data => {
+        console.log(data);
+      });
+  }
+
+  getAPImonster() {
+    Axios.get(`http://192.168.1.37:8000/monster/all`)
+      .then(response => response.data)
+      .then(data => {
+        console.log(data);
+        this.setState({
+          arrMonsters: data
+        });
+      });
+  }
+  getAPIhunters() {
+    Axios.get(`http://192.168.1.37:8000/hunter/all`)
+      .then(response => response.data)
+      .then(data => {
+        console.log(data);
+        this.setState({
+          arrHunters: data
+        });
+      });
+  }
+
+  getAPIfight() {
+    Axios.get(`http://192.168.1.37:8000/fight/all`)
+      .then(response => response.data)
+      .then(data => {
+        console.log(data);
+        this.setState({
+          arrFights: data
+        });
+      });
   }
 
   goToHome() {
@@ -63,14 +122,17 @@ class App extends Component {
       profil: "show-90"
     });
   }
-  goToMain() {
+  goToMain(IdHunter) {
     this.setState({
       home: "hiddenComponent",
       header: "show-100",
       main: "show-90",
       combat: "hiddenComponent",
-      profil: "hiddenComponent"
+      profil: "hiddenComponent",
+      IdHunter: IdHunter
+
     });
+
   }
 
   goToCombat() {
@@ -84,7 +146,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className={this.state.header}>
-          <Header
+          <Header propsId={this.state.IdHunter}
             parentMethod={this.goToMain}
             parentMethod2={this.goToProfil}
             parentMethod3={this.goToHome}

@@ -4,12 +4,19 @@ import "./Home.css";
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      IdHunter: ""
+    };
     this.click = this.click.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ IdHunter: event.target.value });
   }
 
   click() {
-    this.props.parentMethod();
+    this.props.parentMethod(this.state.IdHunter);
   }
 
   render() {
@@ -31,7 +38,13 @@ class Home extends Component {
               />
             </label>
             <label>
-              <input type="text" name="mdp" placeholder="Enter your password" />
+              <input
+                onChange={this.handleChange}
+                value={this.state.IdHunter}
+                type="text"
+                name="mdp"
+                placeholder="Enter your password"
+              />
             </label>
           </form>
           <button onClick={this.click}>Let's fight !</button>
