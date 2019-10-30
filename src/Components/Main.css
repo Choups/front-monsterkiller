@@ -1,0 +1,27 @@
+.cards-flebox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.cards {
+    width: 30%;
+    box-shadow: 0 4px 8px 0 grey;
+    text-align: center;
+}
+
+.cards img {
+    width: 100%;
+}
+
+.cards-container {
+    padding: 2px 16px;
+}
+
+.cards-container-buttons {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
