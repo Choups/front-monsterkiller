@@ -2,37 +2,32 @@ import React, { Component } from "react";
 import "./Header.css";
 
 class Header extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        
-      };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      showProfileOnly: false
+    };
 
+    // this.handleProfileOnlyClick = this.handleProfileOnlyClick.bind(this);//
+  }
 
-render() {
+  handleProfilOnlyClick = () => {
+    this.setState({ showProfileOnly: !this.state.showProfileOnly });
+  };
 
+  render() {
     return (
+      <nav className="NavBlock">
+        <button className="ButtonsNav" onClick={this.handleProfileOnlyClick}>
+          USER
+        </button>
 
-        <nav className="NavBlock">
-            <div>
-                <p>(USER)</p>
-            </div>
-            <div>
-                <p>(LOGO)</p>
-            </div>
-            <div>
-                <p>(SCORE)</p>
-            </div>
-        </nav>
+        <button className="ButtonsNav">LOGO</button>
 
+        <button className="ButtonsNav">SCORE</button>
+      </nav>
     );
+  }
+}
 
-
-    }
-
-}   
-
-
-export default Header; 
-
+export default Header;
