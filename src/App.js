@@ -22,6 +22,17 @@ class App extends Component {
     this.goToNextMonster = this.goToNextMonster.bind(this);
     this.otherMonster = this.otherMonster.bind(this);
     this.randomResult = this.randomResult.bind(this);
+    this.goToHome = this.goToHome.bind(this);
+  }
+
+  goToHome() {
+    this.setState({
+      header: "hiddenComponent",
+      home: "show-100",
+      main: "hiddenComponent",
+      combat: "hiddenComponent",
+      profil: "hiddenComponent"
+    });
   }
 
   otherMonster() {
@@ -76,6 +87,7 @@ class App extends Component {
           <Header
             parentMethod={this.goToMain}
             parentMethod2={this.goToProfil}
+            parentMethod3={this.goToHome}
           />
         </div>
         <div className={this.state.home}>
