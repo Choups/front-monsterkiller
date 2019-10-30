@@ -5,6 +5,11 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.fight = this.fight.bind(this);
+  }
+
+  fight() {
+    this.props.parentMethod();
   }
   render() {
     return (
@@ -24,7 +29,9 @@ class Main extends Component {
         </div>
         <div>
           <button className="cards-container-buttons">X</button>
-          <button className="cards-container-buttons">GO!</button>
+          <button onClick={this.fight} className="cards-container-buttons">
+            GO!
+          </button>
         </div>
       </div>
     );

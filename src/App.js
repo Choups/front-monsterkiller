@@ -17,13 +17,22 @@ class App extends Component {
       profil: "hiddenComponent"
     };
     this.goToMain = this.goToMain.bind(this);
+    this.goToCombat = this.goToCombat.bind(this);
   }
 
   goToMain() {
     this.setState({
       home: "hiddenComponent",
       header: "show-100",
-      main: "show-90"
+      main: "show-90",
+      combat: "hiddenComponent"
+    });
+  }
+
+  goToCombat() {
+    this.setState({
+      main: "hiddenComponent",
+      combat: "show-90"
     });
   }
 
@@ -31,13 +40,13 @@ class App extends Component {
     return (
       <div className="App">
         <div className={this.state.header}>
-          <Header />
+          <Header parentMethod={this.goToMain} />
         </div>
         <div className={this.state.home}>
           <Home parentMethod={this.goToMain} />
         </div>
         <div className={this.state.main}>
-          <Main />
+          <Main parentMethod={this.goToCombat} />
         </div>
         <div className={this.state.combat}>
           <Combat />

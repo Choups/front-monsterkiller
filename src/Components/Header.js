@@ -8,7 +8,10 @@ class Header extends Component {
       showProfileOnly: false
     };
 
-    // this.handleProfileOnlyClick = this.handleProfileOnlyClick.bind(this);//
+    this.clickToMain = this.clickToMain.bind(this);
+  }
+  clickToMain() {
+    this.props.parentMethod();
   }
 
   handleProfilOnlyClick = () => {
@@ -22,7 +25,9 @@ class Header extends Component {
           USER
         </button>
 
-        <button className="ButtonsNav">LOGO</button>
+        <button className="ButtonsNav" onClick={this.clickToMain}>
+          LOGO
+        </button>
 
         <button className="ButtonsNav">SCORE</button>
       </nav>
