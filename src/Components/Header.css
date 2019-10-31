@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    padding: 10px;
 }
 
 .ButtonsNav {
@@ -13,9 +14,6 @@
     border: 2px solid red;
     background-color: black;
     color: red;
-}
-
-.logo {
     font-size: 2.5rem;
     font-family: horror, cursive;
 }

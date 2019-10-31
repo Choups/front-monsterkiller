@@ -17,17 +17,46 @@
 }
 
 .cards-container {
-    padding: 2px 16px;
+    padding: 16px;
     color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cards-container p {
+    margin: 20px 0;
 }
 
 .cards-container-buttons {
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    border: 2px solid purple;
-    box-shadow: 0 0 8px purple;
     margin: 20px;
+    border: 2px solid red;
     background-color: black;
-    color: purple;
+    color: red;
+    font-family: horror;
+    font-size: 2rem;
+}
+
+.small-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid red;
+    background-color: black;
+    color: red;
+    font-family: horror;
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-family: horror;
+    font-size: 2rem;
 }
