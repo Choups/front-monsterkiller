@@ -3,6 +3,7 @@ import "./Combat.css";
 import Axios from "axios";
 
 class Combat extends Component {
+
   constructor(props) {
     super(props);
     this.state = {

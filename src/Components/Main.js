@@ -3,12 +3,13 @@ import "./Main.css";
 import Axios from "axios";
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this.next = this.next.bind(this);
-    this.fight = this.fight.bind(this);
-  }
+    constructor(props) {
+        super(props);
+        this.state = {};
+        this.next = this.next.bind(this);
+        this.fight = this.fight.bind(this);
+    }
+
 
   componentDidUpdate(prevProps) {
     // Utilisation classique (pensez bien à comparer les props) :

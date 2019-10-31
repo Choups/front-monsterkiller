@@ -3,6 +3,7 @@ import "./Header.css";
 import Axios from "axios";
 
 class Header extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -40,26 +41,37 @@ class Header extends Component {
     this.props.parentMethod2(this.props.propsId);
   }
 
-  clickToDeconnect() {
-    this.props.parentMethod3();
-  }
+    clickToMain() {
+        this.props.parentMethod();
+    }
 
-  render() {
-    return (
-      <nav className="NavBlock">
-        <button className="ButtonsNav" onClick={this.clickToProfil}>
-          USER
-        </button>
+    clickToProfil() {
+        this.props.parentMethod2();
+    }
 
-        <button className="ButtonsNav" onClick={this.clickToMain}>
-          LOGO
-        </button>
+    clickToDeconnect() {
+        this.props.parentMethod3();
+    }
 
-        <button className="ButtonsNav">{this.state.score}</button>
-        <button onClick={this.clickToDeconnect}>DECONNEXION</button>
-      </nav>
-    );
-  }
+    render() {
+        return (
+            <nav className="NavBlock">
+                <img
+                    className="ButtonsNav"
+                    onClick={this.clickToProfil}
+                    src="https://zupimages.net/up/19/44/00iw.jpg"
+                    alt="user_pic"
+                />
+                <button className="ButtonsNav">{this.state.score}</button>
+                <button className="ButtonsNav logo" onClick={this.clickToMain}>
+                    M
+                </button>
+                <button className="ButtonsNav" onClick={this.clickToDeconnect}>
+                    X
+                </button>
+            </nav>
+        );
+    }
 }
 
 export default Header;

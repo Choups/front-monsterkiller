@@ -3,13 +3,32 @@
     flex-direction: column;
     height: 100%;
     justify-content: space-around;
+    color: red;
 }
 
 .profil-avatar-img {
-    width: 200px;
-    height: 200px;
+    margin: 20px;
+    width: 150px;
+    width: 50%;
+    box-shadow: 0 0 8px 0 grey;
+    text-align: center;
 }
 
 .profil-infos ul li {
     list-style: none;
+}
+
+.profil_title {
+    font-size: 2.5rem;
+    font-family: horror;
+}
+
+.fight_history {
+    margin-top: 40px;
+}
+
+@media (min-width: 680px) {
+    .profil-avatar-img {
+        width: 15%;
+    }
 }
