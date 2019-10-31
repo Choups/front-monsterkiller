@@ -101,3 +101,13 @@
             -0.2vw 0vw 3vw #4e1111, -0.4vw 0vw 3vw #4e1111;
     }
 }
+
+@media (min-width: 680px) {
+    .Home input {
+        width: 30%;
+    }
+
+    .Home button {
+        width: 20%;
+    }
+}

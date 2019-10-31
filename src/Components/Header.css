@@ -17,3 +17,9 @@
     font-size: 2.5rem;
     font-family: horror, cursive;
 }
+
+@media (min-width: 680px) {
+    .NavBlock {
+        justify-content: space-around;
+    }
+}

@@ -42,7 +42,8 @@
     font-style: "BlackNight";
 }
 
-.opponent {
+.opponent1,
+.opponent2 {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -52,4 +53,24 @@
 .opponent_name {
     font-family: horror;
     font-size: 3rem;
+}
+
+@media (min-width: 680px) {
+    .combat img {
+        height: 300px;
+    }
+
+    .combat button {
+        width: 30%;
+    }
+
+    .opponent1 {
+        width: 50%;
+        align-self: flex-start;
+    }
+
+    .opponent2 {
+        width: 50%;
+        align-self: flex-end;
+    }
 }

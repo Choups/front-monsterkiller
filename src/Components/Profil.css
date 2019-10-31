@@ -26,3 +26,9 @@
 .fight_history {
     margin-top: 40px;
 }
+
+@media (min-width: 680px) {
+    .profil-avatar-img {
+        width: 15%;
+    }
+}
