@@ -18,7 +18,8 @@ class App extends Component {
       profil: "hiddenComponent",
       arrMonsters: [],
       arrHunters: [],
-      arrFights: []
+      arrFights: [],
+      monsterActive: null
     };
     this.goToMain = this.goToMain.bind(this);
     this.goToCombat = this.goToCombat.bind(this);
@@ -36,6 +37,23 @@ class App extends Component {
     this.getAPImonster();
     this.getAPIhunters();
     this.getAPIfight();
+  }
+
+  componentDidUpdate(prevState) {
+    // Utilisation classique (pensez bien à comparer les props) :
+    if (this.state.IdMonster !== prevState.IdMonster) {
+      console.log("AAAAAAAAAAAAA");
+      //   this.setState({ IdHunter: this.props.propsId });
+      //   this.getScore();
+      Axios.get(`http://192.168.1.37:8000/hunter/show/${this.props.propsId}`)
+        .then(response => response.data)
+        .then(data => {
+          this.setState({
+            score: data.hunter.score,
+            IdHunter: this.props.propsId
+          });
+        });
+    }
   }
 
   postAPIfight() {
@@ -113,13 +131,14 @@ class App extends Component {
     });
   }
 
-  goToProfil() {
+  goToProfil(idHunter) {
     this.setState({
       header: "show-100",
       home: "hiddenComponent",
       main: "hiddenComponent",
       combat: "hiddenComponent",
-      profil: "show-90"
+      profil: "show-90",
+      IdHunter: idHunter
     });
   }
   goToMain(IdHunter) {
@@ -130,23 +149,28 @@ class App extends Component {
       combat: "hiddenComponent",
       profil: "hiddenComponent",
       IdHunter: IdHunter
-
     });
-
   }
 
-  goToCombat() {
+  goToCombat(idMonster) {
     this.setState({
       main: "hiddenComponent",
-      combat: "show-90"
+      combat: "show-90",
+      idMonster: idMonster
     });
+  }
+
+  update(scoreChanged) {
+    this.setState({ score: scoreChanged });
   }
 
   render() {
     return (
       <div className="App">
         <div className={this.state.header}>
-          <Header propsId={this.state.IdHunter}
+          <Header
+            propsId={this.state.IdHunter}
+            parentMethod4={this.update}
             parentMethod={this.goToMain}
             parentMethod2={this.goToProfil}
             parentMethod3={this.goToHome}
@@ -157,18 +181,22 @@ class App extends Component {
         </div>
         <div className={this.state.main}>
           <Main
+            propsMonster={this.state.arrMonsters[this.state.IdMonster]}
+            propsId={this.state.IdHunter}
             parentMethod={this.goToCombat}
             parentMethod2={this.otherMonster}
           />
         </div>
         <div className={this.state.combat}>
           <Combat
+            propsId={this.state.IdHunter}
+            propsIdMonster={this.state.idMonster}
             parentMethod={this.goToNextMonster}
             parentMethod2={this.randomResult}
           />
         </div>
         <div className={this.state.profil}>
-          <Profil />
+          <Profil propsId={this.state.IdHunter} />
         </div>
       </div>
     );

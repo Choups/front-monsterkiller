@@ -19,39 +19,40 @@ class Home extends Component {
         this.props.parentMethod(this.state.IdHunter);
     }
 
-    render() {
-        return (
-            <div className="Home">
-                <div>
-                    <h1 class="title">
-                        M<span class="off">O</span>IST
-                        <span class="off2">E</span>R
-                    </h1>
-                </div>
-                <div>
-                    <form>
-                        <label>
-                            <input
-                                type="text"
-                                name="login"
-                                placeholder="Enter your username"
-                            />
-                        </label>
-                        <label>
-                            <input
-                                onChange={this.handleChange}
-                                value={this.state.IdHunter}
-                                type="text"
-                                name="mdp"
-                                placeholder="Enter your password"
-                            />
-                        </label>
-                    </form>
-                    <button onClick={this.click}>Let's fight !</button>
-                </div>
-            </div>
-        );
-    }
+
+ render() {
+    return (
+      <div className="Home">
+        <div>
+          <img
+            src="https://pbs.twimg.com/profile_images/662231441439391745/FepAibA6_400x400.png"
+            alt="cute monster"
+          />
+        </div>
+        <div>
+          <form>
+            <label>
+              <input
+                type="text"
+                name="login"
+                placeholder="Enter your username"
+              />
+            </label>
+            <label>
+              <input
+                onChange={this.handleChange}
+                value={this.state.IdHunter}
+                type="password"
+                name="mdp"
+                placeholder="Enter your password"
+              />
+            </label>
+          </form>
+          <button onClick={this.click}>Let's fight !</button>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Home;
