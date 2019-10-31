@@ -19,7 +19,8 @@ class App extends Component {
       arrMonsters: [],
       arrHunters: [],
       arrFights: [],
-      monsterActive: null
+      monsterActive: null,
+      score: ""
     };
     this.goToMain = this.goToMain.bind(this);
     this.goToCombat = this.goToCombat.bind(this);
@@ -43,7 +44,7 @@ class App extends Component {
     // Utilisation classique (pensez bien à comparer les props) :
     if (this.state.IdMonster !== prevState.IdMonster) {
       console.log("AAAAAAAAAAAAA");
-      
+
       //   this.setState({ IdHunter: this.props.propsId });
       //   this.getScore();
       Axios.get(`http://192.168.1.37:8000/hunter/show/${this.props.propsId}`)
@@ -87,7 +88,8 @@ class App extends Component {
       .then(data => {
         console.log(data);
         this.setState({
-          arrHunters: data
+          arrHunters: data,
+          score: ""
         });
       });
   }
@@ -133,6 +135,7 @@ class App extends Component {
   }
 
   goToProfil(idHunter) {
+    this.getAPIfight();
     this.setState({
       header: "show-100",
       home: "hiddenComponent",

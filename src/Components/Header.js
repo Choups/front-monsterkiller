@@ -7,8 +7,7 @@ class Header extends Component {
     super(props);
     this.state = {
       score: "?",
-      IdHunter: null,
-      time: Date.now()
+      IdHunter: null
     };
 
     this.clickToMain = this.clickToMain.bind(this);
@@ -17,6 +16,10 @@ class Header extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    if (localStorage.getItem("myData") !== this.state.score) {
+      let temp = localStorage.getItem("myData");
+      this.setState({ score: temp });
+    }
     // Utilisation classique (pensez bien à comparer les props) :
     if (this.props.propsId !== prevProps.propsId) {
       //   this.setState({ IdHunter: this.props.propsId });
@@ -26,6 +29,7 @@ class Header extends Component {
         .then(data => {
           this.setState({
             score: data.hunter.score,
+            picture: data.hunter.picture,
             IdHunter: this.props.propsId
           });
         });
@@ -50,7 +54,7 @@ class Header extends Component {
         <img
           className="ButtonsNav"
           onClick={this.clickToProfil}
-          src="https://zupimages.net/up/19/44/00iw.jpg"
+          src={this.state.picture}
           alt="user_pic"
         />
         <button className="ButtonsNav">{this.state.score}</button>

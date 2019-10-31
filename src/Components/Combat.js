@@ -83,6 +83,8 @@ class Combat extends Component {
       let scoreA = parseInt(this.state.score) + parseInt(hunterPoint);
       let scoreB = parseInt(this.state.scoreMonster) + parseInt(monsterPoint);
       let newTurn = parseInt(this.state.turn) + parseInt(1);
+      localStorage.setItem("myData", scoreA);
+
       this.setState({
         score: scoreA,
         scoreMonster: scoreB,
