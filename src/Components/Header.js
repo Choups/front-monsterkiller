@@ -61,7 +61,7 @@ class Header extends Component {
                 />
                 <button className="ButtonsNav">{this.state.score}</button>
                 <button className="ButtonsNav" onClick={this.clickToMain}>
-                    M
+                    WB
                 </button>
                 <button className="ButtonsNav" onClick={this.clickToDeconnect}>
                     X
