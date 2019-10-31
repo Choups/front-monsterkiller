@@ -76,25 +76,26 @@ class Combat extends Component {
                 ? (monsterPoint = attack * this.state.levelMonster)
                 : (monsterPoint = -attack * this.state.levelMonster);
 
-            Axios.post(`http://192.168.1.37:8000/fight/add`, {
-                monster_id: this.state.idMonster,
-                hunter_id: this.props.propsId,
-                hunter_points: hunterPoint,
-                monster_points: monsterPoint
-            });
-            let scoreA = parseInt(this.state.score) + parseInt(hunterPoint);
-            let scoreB =
-                parseInt(this.state.scoreMonster) + parseInt(monsterPoint);
-            let newTurn = parseInt(this.state.turn) + parseInt(1);
-            this.setState({
-                score: scoreA,
-                scoreMonster: scoreB,
-                hunterPoint: hunterPoint,
-                turn: newTurn
-            });
-        } else {
-            this.click();
-        }
+
+      Axios.post(`http://192.168.1.37:8000/fight/add`, {
+        monster_id: this.state.idMonster,
+        hunter_id: this.props.propsId,
+        hunter_points: hunterPoint,
+        monster_points: monsterPoint
+      });
+      let scoreA = parseInt(this.state.score) + parseInt(hunterPoint);
+      let scoreB = parseInt(this.state.scoreMonster) + parseInt(monsterPoint);
+      let newTurn = parseInt(this.state.turn) + parseInt(1);
+      localStorage.setItem("myData", scoreA);
+
+      this.setState({
+        score: scoreA,
+        scoreMonster: scoreB,
+        hunterPoint: hunterPoint,
+        turn: newTurn
+      });
+    } else {
+      this.click();
     }
 
     click() {

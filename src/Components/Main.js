@@ -72,6 +72,7 @@ class Main extends Component {
               <button className="small-button">lvl {this.state.level}</button>
             </div>
             <p>{this.state.description}</p>
+            <p>{this.state.score}</p>
           </div>
         </div>
         <div>
