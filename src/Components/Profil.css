@@ -16,11 +16,13 @@
 
 .profil-infos ul li {
     list-style: none;
+    margin: 0 10px;
 }
 
 .profil_title {
     font-size: 2.5rem;
     font-family: horror;
+    letter-spacing: 0.2rem;
 }
 
 .fight_history {
