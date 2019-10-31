@@ -3,7 +3,6 @@ import "./Combat.css";
 import Axios from "axios";
 
 class Combat extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -102,23 +101,29 @@ class Combat extends Component {
   render() {
     return (
       <div className="combat">
-        <p>{this.state.nameMonster}</p>
-        <p>Level: {this.state.levelMonster}</p>
-
-        <img alt="Gremlins" src={this.state.pictureMonster} />
-        <p>{this.state.scoreMonster}points</p>
-
-        <div className="combat-groupBtn">
-          <button onClick={this.click}>NEXT</button>
-          <p>SCORE: {this.state.hunterPoint} </p>
-          <button onClick={this.rollTheDice}>FIGHT !</button>
+        <div className="opponent1">
+          <img alt="yo" src={this.state.pictureMonster} />
+          <div>
+            <p className="opponent_name">{this.state.nameMonster}</p>
+            <p>Level: {this.state.levelMonster}</p>
+            <p>{this.state.scoreMonster} points</p>
+          </div>
         </div>
 
-        <p>{this.state.name}</p>
-        <p>Level: {this.state.level}</p>
+        <div className="combat-groupBtn">
+          <button onClick={this.rollTheDice}>FIGHT !</button>
+          <p>SCORE: {this.state.hunterPoint}</p>
+          <button onClick={this.click}>NEXT</button>
+        </div>
 
-        <img alt="IKILLU" src={this.state.picture} />
-        <p> {this.state.score} points</p>
+        <div className="opponent2">
+          <div>
+            <p className="opponent_name">{this.state.name}</p>
+            <p>Level: {this.state.level}</p>
+            <p>{this.state.score}</p>
+          </div>
+          <img alt="yoyo" src={this.state.picture} />
+        </div>
       </div>
     );
   }

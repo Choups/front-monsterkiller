@@ -2,32 +2,31 @@ import React, { Component } from "react";
 import "./Home.css";
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            IdHunter: ""
-        };
-        this.click = this.click.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      IdHunter: ""
+    };
+    this.click = this.click.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-    handleChange(event) {
-        this.setState({ IdHunter: event.target.value });
-    }
+  handleChange(event) {
+    this.setState({ IdHunter: event.target.value });
+  }
 
-    click() {
-        this.props.parentMethod(this.state.IdHunter);
-    }
+  click() {
+    this.props.parentMethod(this.state.IdHunter);
+  }
 
-
- render() {
+  render() {
     return (
       <div className="Home">
         <div>
-          <img
-            src="https://pbs.twimg.com/profile_images/662231441439391745/FepAibA6_400x400.png"
-            alt="cute monster"
-          />
+          <h1 class="title">
+            WI<span class="off">L</span>D BL
+            <span class="off2">O</span>OD
+          </h1>
         </div>
         <div>
           <form>

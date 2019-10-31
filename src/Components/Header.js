@@ -3,7 +3,6 @@ import "./Header.css";
 import Axios from "axios";
 
 class Header extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -41,37 +40,37 @@ class Header extends Component {
     this.props.parentMethod2(this.props.propsId);
   }
 
-    clickToMain() {
-        this.props.parentMethod();
-    }
+  clickToMain() {
+    this.props.parentMethod();
+  }
 
-    clickToProfil() {
-        this.props.parentMethod2();
-    }
+  clickToProfil() {
+    this.props.parentMethod2();
+  }
 
-    clickToDeconnect() {
-        this.props.parentMethod3();
-    }
+  clickToDeconnect() {
+    this.props.parentMethod3();
+  }
 
-    render() {
-        return (
-            <nav className="NavBlock">
-                <img
-                    className="ButtonsNav"
-                    onClick={this.clickToProfil}
-                    src="https://zupimages.net/up/19/44/00iw.jpg"
-                    alt="user_pic"
-                />
-                <button className="ButtonsNav">{this.state.score}</button>
-                <button className="ButtonsNav logo" onClick={this.clickToMain}>
-                    M
-                </button>
-                <button className="ButtonsNav" onClick={this.clickToDeconnect}>
-                    X
-                </button>
-            </nav>
-        );
-    }
+  render() {
+    return (
+      <nav className="NavBlock">
+        <img
+          className="ButtonsNav"
+          onClick={this.clickToProfil}
+          src="https://zupimages.net/up/19/44/00iw.jpg"
+          alt="user_pic"
+        />
+        <button className="ButtonsNav">{this.state.score}</button>
+        <button className="ButtonsNav" onClick={this.clickToMain}>
+          M
+        </button>
+        <button className="ButtonsNav" onClick={this.clickToDeconnect}>
+          X
+        </button>
+      </nav>
+    );
+  }
 }
 
 export default Header;

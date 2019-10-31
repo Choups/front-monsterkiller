@@ -31,7 +31,6 @@ class Profil extends Component {
           });
         });
     }
-
   }
 
   render() {
@@ -46,15 +45,15 @@ class Profil extends Component {
         </div>
         <div className="profil-infos">
           <ul>
-            <li>{this.state.name}</li>
+            <li className="profil_title">{this.state.name}</li>
             <li>Score: {this.state.score}</li>
             <li>Level: {this.state.level}</li>
             <li>About me: {this.state.description}</li>
           </ul>
 
           {this.state.fights.length > 0 ? (
-            <div>
-              <p>Fight history:</p>
+            <div className="fight_history">
+              <p className="profil_title">Fight history:</p>
               <ul>
                 <li>
                   {this.state.fights[0].monster_name} |{" "}

@@ -43,6 +43,7 @@ class App extends Component {
     // Utilisation classique (pensez bien à comparer les props) :
     if (this.state.IdMonster !== prevState.IdMonster) {
       console.log("AAAAAAAAAAAAA");
+      
       //   this.setState({ IdHunter: this.props.propsId });
       //   this.getScore();
       Axios.get(`http://192.168.1.37:8000/hunter/show/${this.props.propsId}`)
