@@ -21,6 +21,7 @@
     color: red;
     display: flex;
     flex-direction: column;
+    background-color: black;
 }
 
 .cards-header {
@@ -63,6 +64,6 @@ h4 {
 
 @media (min-width: 680px) {
     .cards {
-        width: 30%;
+        width: 20%;
     }
 }

@@ -17,6 +17,9 @@
 
 .Home {
     height: 100vh;
+    background-image: url("../background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .Home input {
@@ -40,7 +43,7 @@
 
 .title {
     font-size: 6rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     font-family: horror, cursive;
     color: #ffb4c7;
     text-shadow: -0.1vw 0vw 0.25vw #ffb4b4, -0.2vw 0vw 0.25vw #ffb4b4,
