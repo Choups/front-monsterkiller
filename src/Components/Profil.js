@@ -12,14 +12,14 @@ class Profil extends Component {
                 <div>
                     <img
                         className="profil-avatar-img"
-                        src="https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/7_avatar-512.png"
+                        src="https://zupimages.net/up/19/44/00iw.jpg"
                         alt="avatar"
                     />
                 </div>
                 <div className="profil-infos">
                     <ul>
-                        <li>Nickname: Killer</li>
-                        <li>Score actuel: 500</li>
+                        <li>Scar</li>
+                        <li>Score: 500</li>
                         <li>Level: 7</li>
                         <li>Description: lorem ipsum blabla djssd dfsdfsd</li>
                     </ul>
