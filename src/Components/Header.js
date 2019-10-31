@@ -3,6 +3,7 @@ import "./Header.css";
 import Axios from "axios";
 
 class Header extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -10,10 +11,12 @@ class Header extends Component {
       IdHunter: null
     };
 
-    this.clickToMain = this.clickToMain.bind(this);
-    this.clickToProfil = this.clickToProfil.bind(this);
-    this.clickToDeconnect = this.clickToDeconnect.bind(this);
-  }
+
+        this.clickToMain = this.clickToMain.bind(this);
+        this.clickToProfil = this.clickToProfil.bind(this);
+        this.clickToDeconnect = this.clickToDeconnect.bind(this);
+    }
+
 
   componentDidUpdate(prevProps) {
     if (localStorage.getItem("myData") !== this.state.score) {
@@ -33,20 +36,21 @@ class Header extends Component {
             IdHunter: this.props.propsId
           });
         });
+
     }
-  }
 
-  clickToMain() {
-    this.props.parentMethod(this.props.propsId);
-  }
+    clickToMain() {
+        this.props.parentMethod(this.props.propsId);
+    }
 
-  clickToProfil() {
-    this.props.parentMethod2(this.props.propsId);
-  }
+    clickToProfil() {
+        this.props.parentMethod2(this.props.propsId);
+    }
 
-  clickToDeconnect() {
-    this.props.parentMethod3();
-  }
+    clickToDeconnect() {
+        this.props.parentMethod3();
+    }
+
 
   render() {
     return (
@@ -67,6 +71,7 @@ class Header extends Component {
       </nav>
     );
   }
+
 }
 
 export default Header;

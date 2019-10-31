@@ -1,5 +1,5 @@
 .cards-flexbox {
-    margin: 30px 0;
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,11 +17,12 @@
 }
 
 .cards-container {
-    padding: 16px;
+    padding: 12px;
     color: red;
     display: flex;
     flex-direction: column;
     background-color: black;
+    height: 180px;
 }
 
 .cards-header {
@@ -32,6 +33,8 @@
 
 .cards-container p {
     margin: 20px 0;
+    color: white;
+    font-size: 1.1rem;
 }
 
 .cards-container-buttons {
@@ -60,6 +63,7 @@
 h4 {
     font-family: horror;
     font-size: 2rem;
+    letter-spacing: 0.2rem;
 }
 
 @media (min-width: 680px) {
