@@ -40,14 +40,6 @@ class Header extends Component {
     this.props.parentMethod2(this.props.propsId);
   }
 
-  clickToMain() {
-    this.props.parentMethod();
-  }
-
-  clickToProfil() {
-    this.props.parentMethod2();
-  }
-
   clickToDeconnect() {
     this.props.parentMethod3();
   }

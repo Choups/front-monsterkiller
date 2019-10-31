@@ -1,76 +1,72 @@
 .combat {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    color: white;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  color: white;
+  padding: 10px;
 }
 
 .combat img {
-    height: 220px;
-    border: 2px solid black;
-    box-shadow: 0 0 8px 0 grey;
-    text-align: center;
+  height: 220px;
+  border: 2px solid black;
+  box-shadow: 0 0 8px 0 grey;
+  text-align: center;
 }
 
 .combat-groupBtn {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-    border-radius: 30%;
-    border: 2px black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  border-radius: 30%;
+  border: 2px black;
 }
 
 .combat button {
-    display: block;
-    height: 70px;
-    width: 100%;
-    border: 2px solid red;
-    background-color: black;
-    color: red;
-    font-size: 3rem;
-    font-family: horror;
-    margin: 20px 0;
-}
-
-.combat p {
-    font-style: "BlackNight";
+  display: block;
+  height: 70px;
+  width: 100%;
+  border: 2px solid red;
+  background-color: black;
+  color: red;
+  font-size: 3rem;
+  font-family: horror;
+  margin: 20px 0;
 }
 
 .opponent1,
 .opponent2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .opponent_name {
-    font-family: horror;
-    font-size: 3rem;
+  font-family: horror;
+  font-size: 3rem;
 }
 
 @media (min-width: 680px) {
-    .combat img {
-        height: 300px;
-    }
+  .combat img {
+    height: 300px;
+  }
 
-    .combat button {
-        width: 30%;
-    }
+  .combat button {
+    width: 30%;
+  }
 
-    .opponent1 {
-        width: 50%;
-        align-self: flex-start;
-    }
+  .opponent1 {
+    width: 50%;
+    align-self: flex-start;
+  }
 
-    .opponent2 {
-        width: 50%;
-        align-self: flex-end;
-    }
+  .opponent2 {
+    width: 50%;
+    align-self: flex-end;
+  }
 }
