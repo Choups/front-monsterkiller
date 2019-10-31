@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Main.css";
+import Axios from "axios";
 
 class Main extends Component {
   constructor(props) {
@@ -9,27 +10,65 @@ class Main extends Component {
     this.fight = this.fight.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    // Utilisation classique (pensez bien à comparer les props) :
+    if (this.props.propsId !== prevProps.propsId) {
+      console.log("ok on est dedans");
+      //   this.setState({ IdHunter: this.props.propsId });
+      //   this.getScore();
+      Axios.get(
+        `http://192.168.1.37:8000/monster/show/${Math.floor(
+          Math.random() * (19 - 1)
+        ) + 1}`
+      )
+        .then(response => response.data)
+        .then(data => {
+          this.setState({
+            picture: data.picture,
+            name: data.name,
+            level: data.level,
+            score: data.score,
+            description: data.description,
+            id: data.id
+          });
+        });
+    }
+  }
+
   next() {
     this.props.parentMethod2();
+    Axios.get(
+      `http://192.168.1.37:8000/monster/show/${Math.floor(
+        Math.random() * (19 - 1)
+      ) + 1}`
+    )
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          picture: data.picture,
+          name: data.name,
+          level: data.level,
+          score: data.score,
+          description: data.description,
+          id: data.id
+        });
+      });
   }
 
   fight() {
-    this.props.parentMethod();
+    this.props.parentMethod(this.state.id);
   }
   render() {
     return (
       <div className="cards-flexbox">
         <div className="cards">
-          <img
-            src="https://www.podcastscience.fm/wp-content/uploads/2011/12/Untitled.png"
-            alt="Avatar"
-          />
+          <img src={this.state.picture} alt="Avatar" />
 
           <div className="cards-container">
             <h4>
-              <b>John Doe</b>
+              <b>{this.state.name}</b>
             </h4>
-            <p>LEVEL 2</p>
+            <p>Level: {this.state.level}</p>
           </div>
         </div>
         <div>

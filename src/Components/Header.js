@@ -7,14 +7,15 @@ class Header extends Component {
     super(props);
     this.state = {
       score: "?",
-      IdHunter: null
+      IdHunter: null,
+      time: Date.now()
     };
 
     this.clickToMain = this.clickToMain.bind(this);
     this.clickToProfil = this.clickToProfil.bind(this);
     this.clickToDeconnect = this.clickToDeconnect.bind(this);
-    this.updateScore = this.updateScore.bind(this);
   }
+
   componentDidUpdate(prevProps) {
     // Utilisation classique (pensez bien à comparer les props) :
     if (this.props.propsId !== prevProps.propsId) {
@@ -23,7 +24,6 @@ class Header extends Component {
       Axios.get(`http://192.168.1.37:8000/hunter/show/${this.props.propsId}`)
         .then(response => response.data)
         .then(data => {
-          console.log(data);
           this.setState({
             score: data.hunter.score,
             IdHunter: this.props.propsId
@@ -32,16 +32,12 @@ class Header extends Component {
     }
   }
 
-  updateScore(propsId) {
-    this.setState({ IdHunter: propsId });
-  }
-
   clickToMain() {
-    this.props.parentMethod();
+    this.props.parentMethod(this.props.propsId);
   }
 
   clickToProfil() {
-    this.props.parentMethod2();
+    this.props.parentMethod2(this.props.propsId);
   }
 
   clickToDeconnect() {

@@ -41,7 +41,7 @@ class Home extends Component {
               <input
                 onChange={this.handleChange}
                 value={this.state.IdHunter}
-                type="text"
+                type="password"
                 name="mdp"
                 placeholder="Enter your password"
               />
