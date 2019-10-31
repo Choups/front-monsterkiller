@@ -1,4 +1,5 @@
 .cards-flexbox {
+    margin: 50px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,9 +7,8 @@
 }
 
 .cards {
-    width: 30%;
-
-    box-shadow: 0 4px 8px 0 grey;
+    width: 70%;
+    box-shadow: 0 0 8px 0 grey;
     text-align: center;
 }
 
@@ -18,11 +18,16 @@
 
 .cards-container {
     padding: 2px 16px;
+    color: red;
 }
 
 .cards-container-buttons {
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    border: 2px solid black;
+    border: 2px solid purple;
+    box-shadow: 0 0 8px purple;
+    margin: 20px;
+    background-color: black;
+    color: purple;
 }

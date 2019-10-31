@@ -3,11 +3,12 @@
     flex-direction: column;
     height: 100%;
     justify-content: space-around;
+    color: white;
 }
 
 .profil-avatar-img {
-    width: 200px;
-    height: 200px;
+    margin: 20px;
+    width: 150px;
 }
 
 .profil-infos ul li {

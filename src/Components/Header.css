@@ -1,14 +1,21 @@
 .NavBlock {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .ButtonsNav {
-  display: block;
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  border: 2px solid black;
+    display: block;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 2px solid red;
+    background-color: black;
+    color: red;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-family: horror, cursive;
 }
