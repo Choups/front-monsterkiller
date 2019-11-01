@@ -25,7 +25,7 @@ class Header extends Component {
             //   this.setState({ IdHunter: this.props.propsId });
             //   this.getScore();
             Axios.get(
-                `http://192.168.1.37:8000/hunter/show/${this.props.propsId}`
+                `http://25.52.154.207:8000/hunter/show/${this.props.propsId}`
             )
                 .then(response => response.data)
                 .then(data => {
@@ -57,10 +57,13 @@ class Header extends Component {
                     className="ButtonsNav"
                     onClick={this.clickToProfil}
                     src={this.state.picture}
-                    alt="user_pic"
+                    alt=":("
                 />
                 <button className="ButtonsNav">{this.state.score}</button>
-                <button className="ButtonsNav" onClick={this.clickToMain}>
+                <button
+                    className="ButtonsNav logo off"
+                    onClick={this.clickToMain}
+                >
                     WB
                 </button>
                 <button className="ButtonsNav" onClick={this.clickToDeconnect}>

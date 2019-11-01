@@ -14,15 +14,15 @@ class Profil extends Component {
     componentDidUpdate(prevProps) {
         // Utilisation classique (pensez bien à comparer les props) :
         if (this.props.propsId !== prevProps.propsId) {
-            console.log("ok on est dedans");
+            // console.log("ok on est dedans");
             //   this.setState({ IdHunter: this.props.propsId });
             //   this.getScore();
             Axios.get(
-                `http://192.168.1.37:8000/hunter/show/${this.props.propsId}`
+                `http://25.52.154.207:8000/hunter/show/${this.props.propsId}`
             )
                 .then(response => response.data)
                 .then(data => {
-                    console.log(data.fights);
+                    // console.log(data.fights);
                     this.setState({
                         picture: data.hunter.picture,
                         name: data.hunter.name,
@@ -48,7 +48,7 @@ class Profil extends Component {
                 <div className="profil-infos">
                     <ul>
                         <li className="profil_title">{this.state.name}</li>
-                        <li>Score: {this.state.score}</li>
+
                         <li>Level: {this.state.level}</li>
                         <li>About me: {this.state.description}</li>
                     </ul>

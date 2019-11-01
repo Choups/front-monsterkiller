@@ -13,11 +13,11 @@ class Main extends Component {
     componentDidUpdate(prevProps) {
         // Utilisation classique (pensez bien à comparer les props) :
         if (this.props.propsId !== prevProps.propsId) {
-            console.log("ok on est dedans");
+            // s.log("ok on est dedans");
             //   this.setState({ IdHunter: this.props.propsId });
             //   this.getScore();
             Axios.get(
-                `http://192.168.1.37:8000/monster/show/${Math.floor(
+                `http://25.52.154.207:8000/monster/show/${Math.floor(
                     Math.random() * (19 - 1)
                 ) + 1}`
             )
@@ -38,7 +38,7 @@ class Main extends Component {
     next() {
         this.props.parentMethod2();
         Axios.get(
-            `http://192.168.1.37:8000/monster/show/${Math.floor(
+            `http://25.52.154.207:8000/monster/show/${Math.floor(
                 Math.random() * (19 - 1)
             ) + 1}`
         )

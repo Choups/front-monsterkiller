@@ -17,15 +17,15 @@ class Combat extends Component {
     componentDidUpdate(prevProps) {
         // Utilisation classique (pensez bien à comparer les props) :
         if (this.props.propsId !== prevProps.propsId) {
-            console.log("ok on est dedans");
+            // console.log("ok on est dedans");
             //   this.setState({ IdHunter: this.props.propsId });
             //   this.getScore();
             Axios.get(
-                `http://192.168.1.37:8000/hunter/show/${this.props.propsId}`
+                `http://25.52.154.207:8000/hunter/show/${this.props.propsId}`
             )
                 .then(response => response.data)
                 .then(data => {
-                    console.log(data.fights);
+                    // console.log(data.fights);
                     this.setState({
                         picture: data.hunter.picture,
                         name: data.hunter.name,
@@ -36,15 +36,15 @@ class Combat extends Component {
                     });
                 });
         } else if (this.props.propsIdMonster !== prevProps.propsIdMonster) {
-            console.log("ok on est dedans");
+            // console.log("ok on est dedans");
             //   this.setState({ IdHunter: this.props.propsId });
             //   this.getScore();
             Axios.get(
-                `http://192.168.1.37:8000/monster/show/${this.props.propsIdMonster}`
+                `http://25.52.154.207:8000/monster/show/${this.props.propsIdMonster}`
             )
                 .then(response => response.data)
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     this.setState({
                         pictureMonster: data.picture,
                         nameMonster: data.name,
@@ -76,7 +76,7 @@ class Combat extends Component {
                 ? (monsterPoint = attack * this.state.levelMonster)
                 : (monsterPoint = -attack * this.state.levelMonster);
 
-            Axios.post(`http://192.168.1.37:8000/fight/add`, {
+            Axios.post(`http://25.52.154.207:8000/fight/add`, {
                 monster_id: this.state.idMonster,
                 hunter_id: this.props.propsId,
                 hunter_points: hunterPoint,
