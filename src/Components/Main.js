@@ -17,7 +17,7 @@ class Main extends Component {
             //   this.setState({ IdHunter: this.props.propsId });
             //   this.getScore();
             Axios.get(
-                `http://25.52.154.207:8000/monster/show/${Math.floor(
+                `http://wild-blood.herokuapp.com:8000/monster/show/${Math.floor(
                     Math.random() * (19 - 1)
                 ) + 1}`
             )
@@ -38,7 +38,7 @@ class Main extends Component {
     next() {
         this.props.parentMethod2();
         Axios.get(
-            `http://25.52.154.207:8000/monster/show/${Math.floor(
+            `http://wild-blood.herokuapp.com:8000/monster/show/${Math.floor(
                 Math.random() * (19 - 1)
             ) + 1}`
         )
