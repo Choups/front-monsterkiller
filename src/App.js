@@ -46,7 +46,7 @@ class App extends Component {
             //   this.setState({ IdHunter: this.props.propsId });
             //   this.getScore();
             Axios.get(
-                `http://wild-blood.herokuapp.com/hunter/show/${this.props.propsId}`
+                `https://wild-blood.herokuapp.com/hunter/show/${this.props.propsId}`
             )
                 .then(response => response.data)
                 .then(data => {
@@ -59,7 +59,7 @@ class App extends Component {
     }
 
     postAPIfight() {
-        Axios.post(`http://wild-blood.herokuapp.com/fight/add`, {
+        Axios.post(`https://wild-blood.herokuapp.com/fight/add`, {
             monster_id: 1,
             hunter_id: 1,
             monster_points: 100,
@@ -68,7 +68,7 @@ class App extends Component {
     }
 
     getAPImonster() {
-        Axios.get(`http://wild-blood.herokuapp.com/monster/all`)
+        Axios.get(`https://wild-blood.herokuapp.com/monster/all`)
             .then(response => response.data)
             .then(data => {
                 this.setState({
@@ -77,7 +77,7 @@ class App extends Component {
             });
     }
     getAPIhunters() {
-        Axios.get(`http://wild-blood.herokuapp.com/hunter/all`)
+        Axios.get(`https://wild-blood.herokuapp.com/hunter/all`)
             .then(response => response.data)
             .then(data => {
                 console.log(data);
@@ -89,7 +89,7 @@ class App extends Component {
     }
 
     getAPIfight() {
-        Axios.get(`http://wild-blood.herokuapp.com/fight/all`)
+        Axios.get(`https://wild-blood.herokuapp.com/fight/all`)
             .then(response => response.data)
             .then(data => {
                 console.log(data);

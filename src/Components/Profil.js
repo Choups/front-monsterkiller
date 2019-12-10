@@ -18,7 +18,7 @@ class Profil extends Component {
             //   this.setState({ IdHunter: this.props.propsId });
             //   this.getScore();
             Axios.get(
-                `http://wild-blood.herokuapp.com/hunter/show/${this.props.propsId}`
+                `https://wild-blood.herokuapp.com/hunter/show/${this.props.propsId}`
             )
                 .then(response => response.data)
                 .then(data => {
