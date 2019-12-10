@@ -21,7 +21,7 @@ class Combat extends Component {
             //   this.setState({ IdHunter: this.props.propsId });
             //   this.getScore();
             Axios.get(
-                `http://wild-blood.herokuapp.com:8000/hunter/show/${this.props.propsId}`
+                `http://wild-blood.herokuapp.com/hunter/show/${this.props.propsId}`
             )
                 .then(response => response.data)
                 .then(data => {
@@ -40,7 +40,7 @@ class Combat extends Component {
             //   this.setState({ IdHunter: this.props.propsId });
             //   this.getScore();
             Axios.get(
-                `http://wild-blood.herokuapp.com:8000/monster/show/${this.props.propsIdMonster}`
+                `http://wild-blood.herokuapp.com/monster/show/${this.props.propsIdMonster}`
             )
                 .then(response => response.data)
                 .then(data => {
@@ -76,7 +76,7 @@ class Combat extends Component {
                 ? (monsterPoint = attack * this.state.levelMonster)
                 : (monsterPoint = -attack * this.state.levelMonster);
 
-            Axios.post(`http://wild-blood.herokuapp.com:8000/fight/add`, {
+            Axios.post(`http://wild-blood.herokuapp.com/fight/add`, {
                 monster_id: this.state.idMonster,
                 hunter_id: this.props.propsId,
                 hunter_points: hunterPoint,
